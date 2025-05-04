@@ -11,12 +11,12 @@ class Member(models.Model):
     )
 
     serial_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    card_number = models.CharField(max_length=32)
+    card_number = models.CharField(max_length=32, blank=True)
     name = models.CharField(max_length=32)
     gender = models.CharField(choices=GENDER_CHOICE)
-    phone = models.CharField(max_length=32)
+    phone = models.CharField(max_length=32, blank=True)
     address = models.TextField(default="")
-    photo = models.ImageField(upload_to='profile')
+    photo = models.ImageField(upload_to='profile', blank=True)
     points = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now=True)
 
