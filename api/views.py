@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from api.models import Member, Plan
 from api.serializers import MemberSerializer, PlanSerializer
 from rest_framework import viewsets
