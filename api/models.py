@@ -12,8 +12,8 @@ class Member(models.Model):
 
     serial_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     card_number = models.CharField(max_length=32, blank=True)
-    name = models.CharField(max_length=32)
-    gender = models.CharField(choices=GENDER_CHOICE)
+    username = models.CharField(max_length=32)
+    gender = models.CharField(choices=GENDER_CHOICE, default="o")
     phone = models.CharField(max_length=32, blank=True)
     address = models.TextField(default="")
     photo = models.ImageField(upload_to='profile', blank=True)
@@ -32,11 +32,11 @@ class Plan(models.Model):
         ("season", "SEASON")
     )
 
-    plan_type = models.CharField(choices=PLAN_CHOICE)
+    plan_type = models.CharField(choices=PLAN_CHOICE, blank=True)
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    plan_start = models.DateField(auto_now=True)
-    plan_end = models.DateField(auto_now=True)
-    is_activate = models.BooleanField(default=True)
+    plan_start = models.DateField(auto_now=False)
+    plan_end = models.DateField(auto_now=False)
+    is_activate = models.BooleanField(default=False)
 
     class Meta:
         db_table = "plan"
