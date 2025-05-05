@@ -33,7 +33,7 @@ class Plan(models.Model):
     )
 
     plan_type = models.CharField(choices=PLAN_CHOICE, blank=True)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='plan')
     plan_start = models.DateField(auto_now=False)
     plan_end = models.DateField(auto_now=False)
     is_activate = models.BooleanField(default=False)
