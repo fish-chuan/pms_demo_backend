@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: deploy via ssh
-    image: appleboy/ssh-action
+    image: appleboy/drone-ssh
     settings:
       host:
         from_secret: ssh_host
