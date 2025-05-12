@@ -5,8 +5,6 @@ name: default
 steps:
   - name: deploy via ssh
     image: appleboy/drone-ssh
-    ports:
-      from_secret: ssh_port
     settings:
       host:
         from_secret: ssh_host
@@ -14,6 +12,8 @@ steps:
         from_secret: ssh_user
       key:
         from_secret: ssh_key
+      port:
+        from_secret: ssh_port
       script:
         - cd ~/pms_demo_backend
         - cp ../pms_backend_run.sh .
