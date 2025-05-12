@@ -2,7 +2,6 @@ services:
   backend:
     image: fishchuan/pms-demo-backend:latest
     container_name: pms-demo-backend
-    build: .
     env_file: .env
     depends_on:
       - db
