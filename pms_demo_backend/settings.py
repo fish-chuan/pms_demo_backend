@@ -33,10 +33,8 @@ if DEBUG:
     CORS_ALLOW_HEADERS = ["*"]
     CORS_ALLOW_CREDENTIALS = True
 else:
-    ALLOWED_HOSTS = config("ALLOWED_HOSTS")
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        config('CORS_ALLOWED_ORIGIN_REGEXES'),
-    ]
+    ALLOWED_HOSTS = [config("ALLOWED_HOSTS"),]
+    CORS_ALLOWED_ORIGIN_REGEXES = [config('CORS_ALLOWED_ORIGIN_REGEXES'),]
     CORS_ALLOW_HEADERS = [
         'accept',
         'accept-encoding',
