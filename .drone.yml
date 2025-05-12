@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: deploy via ssh
+    image: appleboy/ssh-action
+    settings:
+      host:
+        from_secret: ssh_host
+      username:
+        from_secret: ssh_user
+      key:
+        from_secret: ssh_key
+      script:
+        - cd ~/pms_demo_backend
+        - cp ../pms_backend_run.sh .
+        - cp ../.env .
+        - cp ../init.sql .
+        - ./pms_backend_run.sh
