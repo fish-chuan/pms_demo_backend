@@ -16,9 +16,8 @@ steps:
         from_secret: ssh_port
       script:
         - cd ~/pms_demo_backend
-        - ls -all
+        - git pull
         - cp ../pms_backend_run.sh .
         - cp ../.env .
         - cp ../init.sql .
-        - echo "copy done"
         - ./pms_backend_run.sh
