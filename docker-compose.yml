@@ -11,6 +11,8 @@ services:
     networks:
       pms-backend-demo:
         ipv4_address: 10.0.3.2
+    volumes:
+      - /var/www/pms-backend-static:/static
 
   db:
     image: postgres:15
