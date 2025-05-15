@@ -1,4 +1,5 @@
 import json
+from django.http import HttpResponse
 from api.models import Member, Plan
 from api.serializers import MemberSerializer, PlanSerializer
 from rest_framework import viewsets
@@ -44,3 +45,7 @@ class LogoutView(APIView):
             return Response({"message": "Logout Success!"}, status=200)
         except Exception as e:
             return Response({"status": "Invalid token"}, status=400)
+
+
+def home(request):
+    return HttpResponse("<h2>Hello!</h2>")
