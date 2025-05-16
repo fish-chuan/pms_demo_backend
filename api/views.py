@@ -48,4 +48,4 @@ class LogoutView(APIView):
 
 
 def home(request):
-    return HttpResponse("<h2>Hello!</h2>")
+    return HttpResponse("<h2>Hello World!</h2>")
