@@ -29,8 +29,19 @@ DEBUG = config('DEBUG', cast=bool)
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
-    CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+    CORS_ALLOW_ALL_ORIGINS = True
     CORS_ALLOW_CREDENTIALS = True
+    CORS_ALLOW_HEADERS = [
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
+    ]
 else:
     ALLOWED_HOSTS = [config("ALLOWED_HOSTS"),]
     CORS_ALLOWED_ORIGIN_REGEXES = [config('CORS_ALLOWED_ORIGIN_REGEXES'),]

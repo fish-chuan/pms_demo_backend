@@ -4,13 +4,21 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+import json
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def search(request):
-    phone = request.GET.get('phone')
-    user_name = request.GET.get('username')
+    data = json.loads(request.body)
+    try:
+        phone = data['phone']
+    except:
+        phone = None
+    try:
+        user_name = data['username']
+    except:
+        user_name = None
 
     if phone is not None:
         user = Member.objects.filter(phone=phone)
