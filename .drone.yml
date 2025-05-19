@@ -18,6 +18,7 @@ steps:
         - cd ~/pms_demo_backend
         - git pull
         - cp ../pms_backend_run.sh .
-        - cp ../.env .
+        - cp ../pms-demo-backend.env .
+        - mv .pms-demo-backend.env .env
         - cp ../init.sql .
         - ./pms_backend_run.sh
