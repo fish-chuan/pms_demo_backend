@@ -30,7 +30,7 @@ router.register('plan', views.PlanViewSet)
 
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('api/', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view(), name='login'),

@@ -7,6 +7,7 @@ WORKDIR /app
 
 COPY . .
 RUN mkdir /static
+RUN apt-get update && apt-get install vim -y
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 EXPOSE 8000
