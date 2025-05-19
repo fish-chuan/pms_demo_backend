@@ -15,7 +15,7 @@ class Member(models.Model):
     username = models.CharField(max_length=32)
     gender = models.CharField(choices=GENDER_CHOICE, default="o")
     phone = models.CharField(max_length=32, blank=True)
-    address = models.TextField(default="")
+    address = models.TextField(default="", blank=True)
     photo = models.ImageField(upload_to='profile', blank=True)
     points = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now=True)
