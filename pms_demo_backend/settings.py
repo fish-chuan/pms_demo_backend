@@ -43,7 +43,7 @@ if DEBUG:
         'x-requested-with',
     ]
 else:
-    ALLOWED_HOSTS = ["https://pms-backend.fish-chuan.com",]
+    ALLOWED_HOSTS = ["pms-backend.fish-chuan.com",]
     CORS_ALLOWED_ORIGINS = [
         "https://pms-backend.fish-chuan.com",
         "http://fish-chuan-pms-demo-frontend.s3-website-ap-northeast-1.amazonaws.com",
