@@ -58,10 +58,16 @@ else:
     ]
     CORS_ALLOW_CREDENTIALS = True
     CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS"),]
+    CORS_ALLOW_METHODS = [
+        'GET',
+        'OPTIONS',
+        'POST',
+    ]
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,7 +76,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt.token_blacklist',
     'rest_framework',
-    'corsheaders',
     'api',
 ]
 
