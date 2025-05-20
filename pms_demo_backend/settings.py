@@ -43,26 +43,13 @@ if DEBUG:
         'x-requested-with',
     ]
 else:
-    ALLOWED_HOSTS = [config("ALLOWED_HOSTS"),]
-    CORS_ALLOWED_ORIGIN_REGEXES = [config('CORS_ALLOWED_ORIGIN_REGEXES'),]
-    CORS_ALLOW_HEADERS = [
-        'accept',
-        'accept-encoding',
-        'authorization',
-        'content-type',
-        'dnt',
-        'origin',
-        'user-agent',
-        'x-csrftoken',
-        'x-requested-with',
+    ALLOWED_HOSTS = ["https://pms-backend.fish-chuan.com/",]
+    CORS_ALLOWED_ORIGINS = [
+        "https://pms-backend.fish-chuan.com/",
+        "http://fish-chuan-pms-demo-frontend.s3-website-ap-northeast-1.amazonaws.com/",
     ]
     CORS_ALLOW_CREDENTIALS = True
-    CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS"),]
-    CORS_ALLOW_METHODS = [
-        'GET',
-        'OPTIONS',
-        'POST',
-    ]
+    CSRF_TRUSTED_ORIGINS = ["https://pms-backend.fish-chuan.com/",]
 
 # Application definition
 
